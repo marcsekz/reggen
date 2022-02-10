@@ -1,0 +1,34 @@
+register-width: 8
+registers:
+  CTRL:
+    address: 0A
+    7-6:
+      name: RES
+      desc: Reserved, reads 0
+    5:
+      name: AID
+      desc: Automatic address pointer increment disable
+      values:
+        0: Address auto increment enabled
+        1: Address auto increment disabled
+    4-3:
+      name: RES
+      desc: Reserved, reads 0
+    2:
+      name: ITOD
+      desc: Interrupt pin open-drain
+      values:
+        0: Push-pull interrupt output
+        1: Open-drain interrupt output (ITP ignored, active-low)
+    1:
+      name: ITP
+      desc: Interrupt output polarity, ignored if ITOD=1
+      values:
+        0: Active-low
+        1: Active-high
+    0:
+      name: RES
+      desc: Reserved, reads 0
+    reset: 00
+    desc: Configuration register
+    access: RW
